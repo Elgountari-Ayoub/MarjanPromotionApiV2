@@ -7,20 +7,16 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-
-public class CentreEntity {
+@NoArgsConstructor
+public class FideliteEntity {
     @Id
     @GeneratedValue
     private Long id ;
     @Column(nullable = false)
-    private String centreId ;
+    private String FideliteId ;
     @Column(nullable = false)
-    private String label ;
-    @Column(nullable = false)
-    private String ville ;
-    @ManyToOne
-    @JoinColumn(name = "adminCentre_id")
-    private AdminCentreEntity adminCentreEntity;
+    private String fullName ;
+    @OneToOne
+    private UserEntity userEntity;
 }

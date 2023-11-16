@@ -18,4 +18,8 @@ public class ProduitEntity {
     private String titre ;
     @Column(nullable = false)
     private Float prix ;
+
+    @ManyToOne
+    @JoinColumn(name = "categorie_id")
+    public CategorieEntity categorieEntity ;
 }

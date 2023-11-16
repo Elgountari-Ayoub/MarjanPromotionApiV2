@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -19,4 +21,12 @@ public class PromotionEntity {
     private Double percentage;
     @Column(nullable = false)
     private String description;
+    @Column(nullable = false)
+    private Date dateDebut ;
+    @Column(nullable = false)
+    private Date dateFin ;
+
+    @ManyToOne
+    @JoinColumn(name = "categorie_id")
+    private CategorieEntity categorieEntity;
 }
