@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -23,4 +25,7 @@ public class CentreEntity {
     @ManyToOne
     @JoinColumn(name = "adminCentre_id")
     private AdminCentreEntity adminCentreEntity;
+
+    @OneToMany
+    private List<AdminRayonEntity> adminRayonEntityList ;
 }

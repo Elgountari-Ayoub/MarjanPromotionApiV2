@@ -21,5 +21,6 @@ public class CategorieDTO {
     private String categorieId;
 
     private String nom ;
+
     private List<ProduitDTO> produitDTOList ;
 }

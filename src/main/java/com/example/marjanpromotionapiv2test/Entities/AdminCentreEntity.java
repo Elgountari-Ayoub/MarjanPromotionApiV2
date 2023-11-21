@@ -24,7 +24,6 @@ public class AdminCentreEntity {
     private String email;
     @Column(nullable = false)
     private String encryptPassword;
-
     @OneToMany
     private List<CentreEntity> centreEntityList ;
 

@@ -1,0 +1,137 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: oussama
+      changes:
+        - createTable:
+            tableName: AdminCentre
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+              - column:
+                  name: encryptPassword
+                  type: VARCHAR(255)
+              - column:
+                  name: center_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: FK_AdminCentre_CenterMarjane
+                    references:
+                      tableName: CenterMarjane
+                      columnNames: id
+
+
+  - changeSet:
+      id: 2
+      author: oussama
+      changes:
+        - createTable:
+            tableName: Promotion
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: categoryProduct
+                  type: VARCHAR(255)
+              - column:
+                  name: percentage
+                  type: DOUBLE
+              - column:
+                  name: points
+                  type: INTEGER
+
+              - column:
+                  name: admin_center_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: FK_Promotion_AdminCentre
+                    references: AdminCentre(id)
+              - column:
+                  name: center_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: FK_Promotion_CenterMarjane
+                    references: CenterMarjane(id)
+
+  - changeSet:
+      id: 3
+      author: oussama
+      changes:
+        - createTable:
+            tableName: Centre
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: local
+                  type: VARCHAR(255)
+              - column:
+                  name: stockProduct
+                  type: INTEGER
+
+  - changeSet:
+      id: 4
+      author: oussama
+      changes:
+        - createTable:
+            tableName: AdminGeneral
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+
+  - changeSet:
+      id: 5
+      author: oussama
+      changes:
+        - createTable:
+            tableName: AdminRayon
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+              - column:
+                  name: passwordTemporaire
+                  type: VARCHAR(255)

@@ -1,9 +1,6 @@
 package com.example.marjanpromotionapiv2test.Entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,4 +19,9 @@ public class AdminRayonEntity {
     private String email ;
     @Column(nullable = false)
     private String encryptPassword ;
+//    @ManyToOne
+//    private AdminCentreEntity adminCentreEntity;
+    @ManyToOne
+    @JoinColumn(name = "centre_id")
+    private CentreEntity centreEntity ;
 }
