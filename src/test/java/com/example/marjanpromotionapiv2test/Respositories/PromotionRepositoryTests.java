@@ -1,5 +1,6 @@
 package com.example.marjanpromotionapiv2test.Respositories;
 
+import com.example.marjanpromotionapiv2test.Entities.CategorieEntity;
 import com.example.marjanpromotionapiv2test.Entities.PromotionEntity;
 import com.example.marjanpromotionapiv2test.Helpers.Generate;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,9 @@ class PromotionRepositoryTests {
 
     @MockBean
     Generate generate ;
+
+    @MockBean
+    CategorieEntity categorieEntity;
     private PromotionRepository promotionRepository ;
     @Autowired
     public PromotionRepositoryTests(PromotionRepository promotionRepository) {
@@ -33,7 +37,7 @@ class PromotionRepositoryTests {
                 .dateDebut(Date.valueOf("2023-11-21"))
                 .description("lorem mlsdfk slkds sdflkfsd lksd")
                 .percentage(20D)
-
+                .categorieEntity(categorieEntity)
                 .build();
     }
 
