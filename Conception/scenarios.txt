@@ -1,0 +1,32 @@
+Acteurs:
+- Admin Général
+- Admin du Centre
+- Responsable de Rayon
+
+Système:
+- Gestion des Promotions
+
+Diagramme de Séquence:
+
+1. Admin Général -> Admin du Centre: Création du compte (email, mot de passe)
+2. Admin du Centre -> Admin Général: Connexion (authentification)
+3. Admin du Centre -> Gestion des Promotions: Création d'une nouvelle promotion
+   - Spécifie la catégorie, le pourcentage de réduction, les points de fidélité, etc.
+4. Gestion des Promotions -> Admin du Centre: Confirmation de la création de la promotion
+5. Admin du Centre -> Responsable de Rayon: Envoi de la liste des promotions à valider
+   - Disponible uniquement entre 8h et 12h
+6. Responsable de Rayon -> Gestion des Promotions: Consultation et validation/refus des promotions
+   - Ajoute un commentaire avec la quantité disponible du produit
+   - Vérifie si la promotion respecte les règles générales
+7. Gestion des Promotions -> Responsable de Rayon: Confirmation de la validation/refus de la promotion
+8. Admin Général -> Gestion des Promotions: Consultation de toutes les promotions appliquées et non appliquées
+   - Consultable à tout moment
+9. Gestion des Promotions -> Journalisation: Enregistrement de chaque opération dans le fichier de journalisation
+10. Admin Général -> Gestion des Promotions: Visualisation des statistiques des promotions
+
+Règles générales et contraintes:
+- Les promotions sont disponibles entre 8h et 12h pour les responsables de rayon
+- Chaque promotion est enregistrée dans le fichier de journalisation
+- Les promotions doivent respecter les règles générales du groupe Marjane
+- Une promotion non traitée après 12h est considérée comme non appliquée dans le système
+

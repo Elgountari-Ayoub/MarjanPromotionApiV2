@@ -3,6 +3,7 @@ package com.example.marjanpromotionapiv2test.Respositories;
 import com.example.marjanpromotionapiv2test.Entities.CategorieEntity;
 import com.example.marjanpromotionapiv2test.Entities.PromotionEntity;
 import com.example.marjanpromotionapiv2test.Helpers.Generate;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.jdbc.EmbeddedDatabaseConnection;
@@ -26,6 +27,9 @@ class PromotionRepositoryTests {
     public PromotionRepositoryTests(PromotionRepository promotionRepository) {
         this.promotionRepository = promotionRepository;
     }
+
+    @BeforeEach
+
 
 
     @Test
