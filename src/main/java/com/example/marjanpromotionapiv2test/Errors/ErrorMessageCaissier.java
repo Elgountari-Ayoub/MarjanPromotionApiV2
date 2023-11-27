@@ -1,24 +1,18 @@
 package com.example.marjanpromotionapiv2test.Errors;
 
-import lombok.*;
-
-
-
-public enum ErrorMessagePromotion {
+public enum ErrorMessageCaissier {
     MISSING_REQUIRED_FIELD("missing required field."),
     RECORD_ALREADY_EXISTS("Record already exist "),
     INTERNAL_SERVER_ERROR("server error"),
-    CATEGORIE_NOT_FOUND("Category with provided id is not found"),
-    NO_RECORD_FOUND("record with provided id is not found"),
-    OVER_THAN_50("percentage is over 50"),;
+    NO_RECORD_FOUND("record with provided id is not found"),;
 
     private final String errorMessage;
 
-    ErrorMessagePromotion(String errorMessage) {
+    ErrorMessageCaissier(String errorMessage) {
         this.errorMessage = errorMessage;
     }
 
-    public String getErrorMessagePromotion() {
+    public String getErrorMessageCaissier() {
         return errorMessage;
     }
 }

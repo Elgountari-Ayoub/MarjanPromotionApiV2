@@ -1,5 +1,6 @@
 package com.example.marjanpromotionapiv2test.Entities;
 
+import com.example.marjanpromotionapiv2test.Observer.Observer;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdminRayonEntity {
+public class AdminRayonEntity  {
     @Id
     @GeneratedValue
     private Long id ;
@@ -24,4 +25,6 @@ public class AdminRayonEntity {
     @ManyToOne
     @JoinColumn(name = "centre_id")
     private CentreEntity centreEntity ;
+
+
 }

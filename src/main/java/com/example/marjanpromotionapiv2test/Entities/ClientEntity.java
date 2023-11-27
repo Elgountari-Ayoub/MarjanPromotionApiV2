@@ -2,7 +2,6 @@ package com.example.marjanpromotionapiv2test.Entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,16 +9,17 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class FideliteEntity {
+public class ClientEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id ;
+    private int id ;
     @Column(nullable = false)
-    private String fideliteId ;
+    private String clientId ;
     @Column(nullable = false)
-    private int points ;
-    @ManyToOne
-    @JoinColumn(name = "Caissier_id")
-    private CaissierEntity caissierEntity ;
+    private String fullname;
+    @Column(nullable = false,unique = true)
+    private String email;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fidelite_id")
+    private FideliteEntity fideliteEntity ;
 }

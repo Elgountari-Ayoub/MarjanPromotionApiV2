@@ -8,9 +8,12 @@ import com.example.marjanpromotionapiv2test.Entities.AdminRayonEntity;
 import com.example.marjanpromotionapiv2test.Enums.PromoStatus;
 import com.example.marjanpromotionapiv2test.Requests.CentrePromotionRequest;
 
+import java.util.List;
+
 public interface AdminRayonService {
 
     public CentrePromotionDTO accepterOuRefuserPromotion(CentrePromotionRequest centrePromotionRequest);
     public AdminRayonDTO create(AdminRayonDTO adminRayonDTO);
+    public List<AdminRayonDTO> getAll();
 
 }

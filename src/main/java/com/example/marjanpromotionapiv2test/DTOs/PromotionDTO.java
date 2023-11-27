@@ -8,6 +8,7 @@ import java.sql.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Getter
 @Setter
 public class PromotionDTO {
