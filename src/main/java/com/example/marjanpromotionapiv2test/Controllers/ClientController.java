@@ -1,6 +1,7 @@
 package com.example.marjanpromotionapiv2test.Controllers;
 
 import com.example.marjanpromotionapiv2test.DTOs.ClientDTO;
+import com.example.marjanpromotionapiv2test.Requests.AchatRequest;
 import com.example.marjanpromotionapiv2test.Requests.ClientRequest;
 import com.example.marjanpromotionapiv2test.Responses.ClientResponse;
 import com.example.marjanpromotionapiv2test.Services.ClientService;
@@ -47,6 +48,13 @@ public class ClientController {
 
     @DeleteMapping("{clientId}")
     public void delete(@PathVariable String clientId) {
-
     }
+
+    @PostMapping("/achat")
+    public ResponseEntity<?> achat(@RequestBody AchatRequest achatRequest){
+        clientService.achat(achatRequest);
+        return ResponseEntity.ok().body("l'achat est complet");
+    }
+
+
 }

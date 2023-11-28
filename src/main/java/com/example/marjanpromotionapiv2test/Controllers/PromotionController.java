@@ -28,7 +28,6 @@ public class PromotionController {
         this.promotionService = promotionService;
         this.modelMapper = modelMapper ;
 
-
         modelMapper.addMappings(new PropertyMap<PromotionRequest, PromotionDTO>() {
             @Override
             protected void configure() {
