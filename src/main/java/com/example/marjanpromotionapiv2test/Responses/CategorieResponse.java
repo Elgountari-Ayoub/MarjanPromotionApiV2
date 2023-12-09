@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CategorieResponse {
-    private String categorieId;
-    private String nom ;
+        private String categorieId;
+        private String nom ;
 }
