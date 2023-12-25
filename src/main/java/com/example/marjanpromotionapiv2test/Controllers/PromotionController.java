@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 
@@ -26,6 +27,7 @@ public class PromotionController {
     private final ModelMapper modelMapper ;
     @Autowired
     public PromotionController(PromotionService promotionService , ModelMapper modelMapper) {
+
         this.promotionService = promotionService;
         this.modelMapper = modelMapper ;
 
